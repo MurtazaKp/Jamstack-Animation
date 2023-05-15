@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    
+    <title>Animation</title>
+
+    </head>
+<body>
+
+
+    <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 '>
+        <div class=" max-w-sm p-6  border rounded-2xl bg-[#f1f2f6] flex flex-col justify-between card " on onmouseleave="onleave(this)"  onmouseover="onHover(this)">
+        <h3 class="  font-bold tracking-tight  dark: mb-6  text-5xl">WebJ</h3>
+        <p class="font-normal  mb-20">The platform provides quick, secured, durable and easily manageable digital presence that is uniquely tailored with popular tech stack by decoupling frontend and backend responsibilities.</p>
+        <div class='flex justify-end items-center'>
+        <a href="#" class=' relative z-30  opacity-0'> Know More</a>
+            <div class='w-16 h-16  rounded-full bg-[#ff5223] circle'></div>
+            
+        </div>
+    </div>
+    
+    <div class=" max-w-sm  p-6  border rounded-2xl bg-[#f1f2f6] flex flex-col justify-between card " onmouseleave="onleave(this)" onmouseover="onHover(this)"  >
+        <h3 class="  font-bold tracking-tight  dark: mb-6 text-black text-5xl">MobJ</h3>
+     
+        <p class="font-normal text-black mb-7 ">The mobJ is innovation by Jamstack+ to build the collaborative mobile apps. The architecture is flexible enough to give you freedom to manage your app content seamlessly. It provides the app that can run on any platform and on any screen smoothly.</p>
+
+        <div class='flex justify-end items-center'>
+        <a href="#" class='text-green-500 relative z-30 opacity-0'> Know More</a>
+            <div class='w-16 h-16 rounded-full bg-[#ff5223] circle'></div>
+            
+        </div>
+    </div>
+    
+    
+    <div class=" max-w-sm p-6  border rounded-2xl bg-[#f1f2f6] flex flex-col justify-between card " onmouseleave="onleave(this)"   onmouseover="onHover(this)">
+        <h3 class="  font-bold tracking-tight  dark: mb-6 text-black text-5xl">EcommJ</h3>
+        <p class="font-normal text-black mb-20">The platform delivers fast, easily managed CMS, eCommerce vitals for businesses that are uniquely tailored with popular tech stack by decoupling frontend and backend responsibilities.</p>
+        
+        <div class='flex justify-end items-center'>
+            <a href="#" class='text-green-500 relative z-30 opacity-0'> Know More</a>
+                <div class='w-16 h-16 rounded-full bg-[#ff5223] circle'></div>
+                
+            </div>
+    </div>
+        </div>
+
+
+        <script>
+            gsap.set("a",{y:-20})
+          onHover = (element) => {
+            gsap.to(element, { backgroundColor: "#4767F6",duration:0.3,  });
+            gsap.to(element.querySelector("p"), { color: "#ffffff",duration:0.3, });
+            gsap.to(element.querySelector("h3"), { color: "#ffffff",duration:0.3, });
+            gsap.to(element.querySelector(".circle"), {
+  scale: 1.5,
+  transformOrigin: "100% 100%", backgroundColor:"#e002a2"
+});
+            gsap.to(element.querySelector("a"), { opacity:1, duration:0.1, x:25,  color:'#ffffff' });
+            
+
+};
+
+onleave = (element) => {
+  gsap.to(element, { backgroundColor: "" });
+  gsap.to(element.querySelector("p"), { color: "" });
+  gsap.to(element.querySelector("h3"), { color: "" });
+  gsap.to(element.querySelector(".circle"), {
+  scale: 1,
+  transformOrigin: "100% 100%", backgroundColor:"#ff5223"
+});
+  gsap.to(element.querySelector("a"), { opacity:0 ,x:-50  });
+  
+};
+        </script>
+    </body>
+</html>
