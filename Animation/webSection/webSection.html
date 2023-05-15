@@ -23,13 +23,13 @@
     
             <!-- Add a container div to center and limit the width of the content -->
             <div class=" mx-auto py-20">
-                <p class="text-2xl text-center w-5/12 mx-auto py-5">The all-in-one modern technology solution that offers everything to accelerate your business across the digital platforms.</p>
+                <p class="text-2xl text-center w-10/12 lg:w-5/12 mx-auto py-5">The all-in-one modern technology solution that offers everything to accelerate your business across the digital platforms.</p>
                 <div class=" flex justify-between items-center flex-col h-80">
                     <!-- Add a class name to the line div and remove the content to use it as a visual element only -->
                     <div class="line border-3 w-1 border-green  bg-black"></div>
                     <div class="w-5 h-5 rounded-full bg-black dot opacity-0  "></div>
                 </div>
-                <h2 class="text-4xl text-center w-3/12 mx-auto opacity-1 ">Your one stop solution 
+                <h2 class="text-4xl text-center lg:w-3/12 mx-auto opacity-1 ">Your one stop solution 
                     in web reality.</h2>
             </div>
         </div>
@@ -49,18 +49,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const tl = gsap.timeline({
     onComplete: () => {
-      gsap.to(".line", { duration: 1, });
+      gsap.to(".line", { duration: 5, });
     }
   });
 
   tl.fromTo(
     ".line",
     { opacity: 0, height: 0 },
-    { opacity: 1, height: "100%", backgroundColor: "black", duration: 1 }
+    { opacity: 1, height: "100%", backgroundColor: "black", duration: 6 }
   )
     .to(".dot", { duration: 1, opacity:1  })
 
-    .from("h2", { y:100, duration:1 ,opacity:0} );
+    .from("h2", { y:100, duration:5 ,opacity:0} );
     
 
   ScrollTrigger.create({
