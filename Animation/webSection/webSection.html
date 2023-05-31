@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="h-screen flex justify-center items-center bg-blue-300 text-3xl">
-            Section3
+            Third Section
         </div>
     </div>
     <!-- Add a wrapper div to hold the page content -->
@@ -48,9 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
   gsap.registerPlugin(ScrollTrigger);
 
   const tl = gsap.timeline({
-    onComplete: () => {
-      gsap.to(".line", { duration: 5, });
-    }
+   
   });
 
   tl.fromTo(
@@ -65,9 +63,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   ScrollTrigger.create({
     trigger: ".line",
-    start: "top center",
+    start: "top 85%",
     end:"center end",
-   
+   markers:true,
     scrub: true,
     animation: tl
   });

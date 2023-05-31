@@ -59,35 +59,103 @@
           </div>
         </div>
             
+        <div class="flex flex-col sm:flex-row gap-6 p-3 shadow-lg drop-shadow-2xl justify-evenly items-center border-2 border-t-0 py-5 border-gray-200 card">
+            
+          <img class='' src='https://github.com/MurtazaKp/Jamstack/blob/main/public/images/Testimonial3.png?raw=true' />
+      
+        <div class="flex-grow sm:text-left  text-center mt-6 sm:mt-0">
+          
+          <p class="leading-relaxed text-base pb-3">Our team has hands on on the modern and trendy tools with great knowledge of choosing them wisely.</p>
+         <p>- Ryan Lipshutz</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-6 p-3 shadow-lg drop-shadow-2xl justify-evenly items-center border-2 border-t-0 py-5 border-gray-200 card">
+            
+        <img class='' src='https://github.com/MurtazaKp/Jamstack/blob/main/public/images/Testimonial3.png?raw=true' />
+    
+      <div class="flex-grow sm:text-left  text-center mt-6 sm:mt-0">
+        
+        <p class="leading-relaxed text-base pb-3">Our team has hands on on the modern and trendy tools with great knowledge of choosing them wisely.</p>
+       <p>- Ryan Lipshutz</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-6 p-3 shadow-lg drop-shadow-2xl justify-evenly items-center border-2 border-t-0 py-5 border-gray-200 card">
+            
+      <img class='' src='https://github.com/MurtazaKp/Jamstack/blob/main/public/images/Testimonial3.png?raw=true' />
+  
+    <div class="flex-grow sm:text-left  text-center mt-6 sm:mt-0">
+      
+      <p class="leading-relaxed text-base pb-3">Our team has hands on on the modern and trendy tools with great knowledge of choosing them wisely.</p>
+     <p>- Ryan Lipshutz</p>
+    </div>
+  </div>
+
+
+  <div class="flex flex-col sm:flex-row gap-6 p-3 shadow-lg drop-shadow-2xl justify-evenly items-center border-2 border-t-0 py-5 border-gray-200 card">
+            
+    <img class='' src='https://github.com/MurtazaKp/Jamstack/blob/main/public/images/Testimonial3.png?raw=true' />
+
+  <div class="flex-grow sm:text-left  text-center mt-6 sm:mt-0">
+    
+    <p class="leading-relaxed text-base pb-3">Our team has hands on on the modern and trendy tools with great knowledge of choosing them wisely.</p>
+   <p>- Ryan Lipshutz</p>
+  </div>
+</div>
+
+<div class="flex flex-col sm:flex-row gap-6 p-3 shadow-lg drop-shadow-2xl justify-evenly items-center border-2 border-t-0 py-5 border-gray-200 card">
+            
+  <img class='' src='https://github.com/MurtazaKp/Jamstack/blob/main/public/images/Testimonial3.png?raw=true' />
+
+<div class="flex-grow sm:text-left  text-center mt-6 sm:mt-0">
+  
+  <p class="leading-relaxed text-base pb-3">Our team has hands on on the modern and trendy tools with great knowledge of choosing them wisely.</p>
+ <p>- Ryan Lipshutz</p>
+</div>
+</div>
+
+
+<div class="flex flex-col sm:flex-row gap-6 p-3 shadow-lg drop-shadow-2xl justify-evenly items-center border-2 border-t-0 py-5 border-gray-200 card">
+            
+  <img class='' src='https://github.com/MurtazaKp/Jamstack/blob/main/public/images/Testimonial3.png?raw=true' />
+
+<div class="flex-grow sm:text-left  text-center mt-6 sm:mt-0">
+  
+  <p class="leading-relaxed text-base pb-3">Our team has hands on on the modern and trendy tools with great knowledge of choosing them wisely.</p>
+ <p>- Ryan Lipshutz</p>
+</div>
+</div>
            
           </div>
     </div>
    
 
-      <div class="flex justify-center items-center h-screen bg-green-200 text-4xl">third Section</div>
+      <div class="flex justify-center items-center h-screen bg-green-200 text-4xl">Third Section</div>
 
 
 
       
       <script>
-        // Register the ScrollTrigger plugin with GSAP
-        gsap.registerPlugin(ScrollTrigger);
+     gsap.registerPlugin(ScrollTrigger);
 
-        // Create a ScrollTrigger object
-        var scrollTrigger = new ScrollTrigger({
-           trigger: "textbanner",
-           start: "top top ",
-           end:"45% 45%",
-         
-           scrub: true,
-           // Create an animation that moves the text banner to the center of the screen
-           animation: gsap.from('.testimonial .card',{
-             x:1500,
-             duration:6,
-             stagger:1,
-             ease: 'easeInOutQuint'
-           })
-        });
+const cards = gsap.utils.toArray('.testimonial .card');
+
+cards.forEach((card, index) => {
+  gsap.from(card, {
+    x: 1000,
+    opacity: 0,
+    duration: 10,
+    ease: 'sine',
+    scrollTrigger: {
+      trigger: card,
+      start: 'top 80%',
+      end: 'top 20%',
+      scrub: true,
+    }
+  });
+});
+
     </script>
 </body>
 </html>
